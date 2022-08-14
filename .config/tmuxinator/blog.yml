@@ -1,0 +1,14 @@
+name: Blog
+root: ~/Blogs/bridgetown/weizheheng
+
+# on_project_stop: overmind quit
+
+windows:
+  - editor:
+      panes:
+        - vim
+  - server:
+      layout: 4203,234x54,0,0{85x54,0,0,1,148x54,86,0,4}
+      panes:
+        - 
+        - bin/bridgetown start

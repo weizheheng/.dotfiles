@@ -1,0 +1,22 @@
+# /Users/marcusheng/.config/tmuxinator/360.yml
+
+name: 360
+root: ~/Workspace/project-tapir
+
+on_project_stop: overmind quit
+
+windows:
+  - editor:
+      panes:
+        - vim
+  - console:
+      layout: 4203,234x54,0,0{85x54,0,0,1,148x54,86,0,4}
+      panes:
+        - 
+        - rails console
+  - server:
+      layout: 4203,234x54,0,0{85x54,0,0,1,148x54,86,0,4}
+      panes:
+        - ss1
+        - debug1
+  - git: lazygit

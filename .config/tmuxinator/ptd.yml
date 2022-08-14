@@ -1,0 +1,12 @@
+name: Project Tapir Docs
+root: ~/Workspace/internal-doc-proxy/internal-doc
+
+windows:
+  - editor:
+      panes:
+        - vim
+  - server:
+      layout: 4203,234x54,0,0{85x54,0,0,1,148x54,86,0,4}
+      panes:
+        - 
+        - 
