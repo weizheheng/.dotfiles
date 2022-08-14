@@ -1,0 +1,16 @@
+call plug#begin(expand('~/.vim/plugged'))
+Plug 'arcticicestudio/nord-vim'
+Plug 'neovim/nvim-lspconfig'
+call plug#end()
+
+set nocompatible
+if (has("termguicolors"))
+  set termguicolors
+endif
+highlight LspDiagnosticsDefaultError guifg="BrightRed"
+
+syntax enable
+colorscheme nord
+
+lua require('marcus.lsp')
+
