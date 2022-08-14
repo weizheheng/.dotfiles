@@ -29,12 +29,11 @@ alias sgh="shipgit hotfix"
 
 # Example aliases
 alias vim="~/Personal/Software/neovim-release/7/nvim-osx64/bin/nvim"
-alias zshrc="vim ~/.zshrc"
-alias vimrc="cd ~/.config/nvim && vim init.vim"
+alias zshrc="cd ~/.dotfiles && vim .zshrc"
+alias vimrc="cd ~/.dotfiles/.config/nvim && vim init.vim"
+alias yrc="cd ~/.dotfiles/.config/yabai && vim yabairc"
 alias gcom="git commit -m"
-alias gcomwm="git commit -a --allow-empty-message -m ''"
 alias yr="brew services restart yabai"
-alias yrc="vim ~/.yabairc"
 alias mux="tmuxinator"
 
 # Work Postco 360
