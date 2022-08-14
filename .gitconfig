@@ -1,0 +1,22 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Marcus Heng
+email = tech@weizheheng.com
+[pull]
+	rebase = true
+; [pager]
+; 	diff = delta
+; 	log = delta
+; 	reflog = delta
+; 	show = delta
+
+; [delta]
+; 	side-by-side = true
+; 	syntax-theme = Nord
+; 	navigate = true
+[init]
+	defaultBranch = main
+[alias]
+	checkoutr = checkout
+	plog = log --graph --pretty=format:'%h - %d %s %n' --abbrev-commit --date=relative --branches
