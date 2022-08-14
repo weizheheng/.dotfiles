@@ -1,0 +1,103 @@
+# alt - space : open_iterm2.sh
+alt - space : open -na /Applications/iTerm.app
+
+# Navigation
+# Kia Yun's place setup
+# alt - d : index=`yabai -m query --displays --display | jq '.index'` &&\
+#                 if (($index == 1)) then\
+#                     yabai -m window --focus west || \
+#                     yabai -m display --focus 2;\
+#                 elif (($index == 2)) then\
+#                     yabai -m window --focus west || \
+#                     yabai -m display --focus 1;\
+#                 else \
+#                     yabai -m window --focus west || \
+#                     yabai -m display --focus 1;\
+#                 fi
+# alt - h : yabai -m window --focus south || $( yabai -m display --focus south;)
+# alt - t : yabai -m window --focus north || $(yabai -m display --focus north;)
+# alt - n : index=`yabai -m query --displays --display | jq '.index'` &&\
+#                 if (($index == 1)) then\
+#                     yabai -m window --focus east || \
+#                     yabai -m display --focus 2;\
+#                 elif (($index == 3)) then\
+#                     yabai -m window --focus east;\
+#                 else \
+#                     yabai -m window --focus east;\
+#                 fi
+
+# Home setup
+alt - d : index=`yabai -m query --displays --display | jq '.index'` &&\
+                if (($index == 1)) then\
+                    yabai -m window --focus west || \
+                    yabai -m display --focus 2;\
+                elif (($index == 2)) then\
+                    yabai -m window --focus west;\
+                else \
+                    yabai -m window --focus west || \
+                    yabai -m display --focus 1;\
+                fi
+alt - h : yabai -m window --focus south || $( yabai -m display --focus south;)
+alt - t : yabai -m window --focus north || $(yabai -m display --focus north;)
+alt - n : index=`yabai -m query --displays --display | jq '.index'` &&\
+                if (($index == 1)) then\
+                    yabai -m window --focus east || \
+                    yabai -m display --focus 3;\
+                elif (($index == 3)) then\
+                    yabai -m window --focus east;\
+                else \
+                    yabai -m window --focus east || \
+                    yabai -m display --focus 1;\
+                fi
+
+# Moving windows
+shift + alt - d : yabai -m window --warp west
+shift + alt - h : yabai -m window --warp south
+shift + alt - t : yabai -m window --warp north
+shift + alt - n : yabai -m window --warp east
+
+# Closing
+shift + cmd - q : yabai -m window --close
+
+# # Equalize size of windows
+# alt - 0 : yabai -m space --balance
+
+# Make window native fullscreen
+alt - k : yabai -m window --toggle zoom-fullscreen
+alt + cmd + ctrl - f : yabai -m window --toggle float
+# shift + alt - f : yabai -m window --toggle native-fullscreen
+
+# fast focus desktop (切换空间焦点)
+alt - a : yabai -m space --focus 1
+alt - o : yabai -m space --focus 2
+alt - e : yabai -m space --focus 3
+alt - u : yabai -m space --focus 4
+alt - i : yabai -m space --focus 5
+alt - f : yabai -m space --focus 6
+alt - g : yabai -m space --focus 7
+alt - c : yabai -m space --focus 8
+alt - r : yabai -m space --focus 9
+alt - l : yabai -m space --focus 10
+alt - s : yabai -m space --focus 11
+
+# send window to space
+alt + shift - a : yabai -m window --space 1
+alt + shift - o : yabai -m window --space 2
+alt + shift - e : yabai -m window --space 3
+alt + shift - u : yabai -m window --space 4
+alt + shift - i : yabai -m window --space 5
+alt + shift - f : yabai -m window --space 6
+alt + shift - g : yabai -m window --space 7
+alt + shift - c : yabai -m window --space 8
+alt + shift - r : yabai -m window --space 9
+alt + shift - l : yabai -m window --space 10
+alt + shift - s : yabai -m window --space 11
+
+# Stacking
+cmd + ctrl - h  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - j  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - k    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - l : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
+
+cmd + ctrl - n : yabai -m window --focus stack.next
+cmd + ctrl - p : yabai -m window --focus stack.prev
